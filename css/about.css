@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Caprasimo&family=Playfair+Display&family=Poppins:wght@200&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+:root {
+    --bg: #0c0c0c;
+    --border: #303030;
+    --color: #7e7e7e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url("/assets/fondo.jpg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: "Bridge Head Con Medium";
+}
+
+.hr {
+    position: fixed;
+    left: 50%;
+    width: 6px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 3;
+    transform: scaleY(0);
+}
+
+.menu-left,
+.menu-right {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.menu-left {
+    left: -50%;
+}
+
+.menu-right {
+    right: -50%;
+}
+
+.menu-link a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 100px;
+}
+
+.menu-link:first-child a::before {
+    display: block;
+    position: relative;
+    content: "";
+    background-image: url("/brush-stroke.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    top: 80px;
+    left: 0;
+    height: 40px;
+    width: 240px;
+}
+
+.menu-link a span {
+    font-family: "Bigilla";
+    font-size: 24px;
+}
+
+.contact .title {
+    font-size: 80px;
+}
+
+.contact .info {
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.mail {
+    margin-bottom: 60px;
+}
+
+.menu-close {
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.menu-close-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    border: 10px solid #000;
+}
+
+img {
+    width: 100%;
+}
+
+.menu-open {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.logo {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 80px;
+}
+
+
+
+
+.socials {
+    position: absolute;
+    left: 15vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 40px;
+    transform-origin: center;
+}
+
+.dock {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dock-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 0 10px;
+    background: var(--bg);
+    color: var(--color);
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 700ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform-origin: bottom;
+}
+.dock-item a{
+    text-decoration: none;
+    color: var(--color);
+}
+
+
+
+
+@media (max-width: 900px) {
+	.menu-right {
+		display: none;
+	}
+
+	.menu-left {
+		width: 100%;
+        left: -420px;
+	}
+
+	.menu-close {
+		position: fixed;
+		top: 4em;
+		right: 0;
+		transform: translate(-50%, -50%);
+		margin: 40px;
+	}
+    .menu-link a {
+        font-size: 80px;
+    }
+	.hr {
+		display: none;
+	}
+
+	img {
+		width: 40%;
+	}
+}
+
+
+.music-player-container {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    width: 480px;
+    transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.music-player-container.hide {
+    width: 180px;
+}
+
+.music-player-container.hide .track-info,
+.music-player-container.hide .track-nav {
+    transition: all 0s ease;
+    opacity: 0;
+}
+
+.toggle-player {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.avatar {
+    position: absolute;
+    top: -30px;
+    height: 100px;
+    z-index: 1;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.sound-bars {
+    flex: 1;
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+}
+
+.player {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 0 1.5rem 0 100px;
+}
+
+.track-info {
+    flex: 2;
+    margin-right: 1rem;
+    transition: all 0.25s ease;
+}
+
+.track-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    pointer-events: none;
+}
+
+.track-artist {
+    font-family: serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.track-nav {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 0.25s ease;
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+    padding: 5px 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.playpause-track ion-icon {
+    font-size: 20px;
+}
+
+
+@media(max-width: 900px){
+    .music-player-container{
+        width: 23rem;
+        left: 1rem;
+        bottom: 1rem;
+        transform: translateY(-50%);
+    }
+
+    .track-name{
+        font-size: 0.9rem;
+    }
+
+    .track-artist{
+        letter-spacing: 0;
+        font-size: 0.8rem;
+    }
+
+    .playpause-track,
+    .prev-track,
+    .next-track{
+        padding: 2.5px 7.5px;
+    }
+}
+
+.hero-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.hero-container .img {
+    position: relative;
+    width: 50%;
+    margin-left: 10vw;
+    z-index: -1;
+}
+
+.hero-container .img img {
+    width: 30vw;
+    border-radius: 0 0 50% 50%;
+}
+
+.hero-container .txt-about {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    margin-left: 20vh;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 1.5rem 5.5rem 1.5rem;
+}
+.brush{
+    position: absolute;
+    top: 2.5em;
+    width: 50%;
+    z-index: -1;
+}
+
+.arrow {
+    width: 50px;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+}
+
+.arrow2{
+    width: 50px;
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    transform: rotate(180deg);
+}
+
+h1 {
+    text-align: left;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3em;
+    color: #fff;
+    white-space: nowrap;
+}
+
+hr {
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+}
+
+p {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 500;
+    font-family: serif;
+}
+h3{
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px dashed #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+@media(max-width: 900px){
+    .hero-container {
+        flex-direction: column;
+        margin: auto;
+    }
+    .hero-container .img {
+        width: 100%;
+        height: 50%;
+        margin: 10vh 0 0 0;
+    }
+    .hero-container .txt{
+        width: 100%;
+        height: 50%;
+    }
+    .hero-container .img img{
+        width: 45vh;
+    }
+}
+
+.custom-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.site-wide {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.site-wide .pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+    background: #fff;
+    transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+
+.site-wide.active .pointer {
+
+    width: 20px;
+    height: 20px;
+}

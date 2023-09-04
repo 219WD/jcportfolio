@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JC || Porfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/assets/JC-b.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+</head>
+
+<body>
+    <div class="custom-cursor site-wide">
+        <div class="pointer"></div>
+    </div>
+    <!-- Menu -->
+    <nav>
+        <div class="menu-open">menu</div>
+        <div class="logo"><a href="/index.html"><img src="/assets/JC-b.png" alt="Logo"></a></div>
+    </nav>
+    <div class="container">
+        <div class="menu-close">
+            <div class="menu-close-img"><img src="close-icon.png" alt="" /></div>
+        </div>
+        <div class="hr"></div>
+        <div class="menu">
+            <div class="menu-left">
+                <div class="menu-links">
+                    <div class="menu-link">
+                        <a href="/index.html">Home <span>01</span></a>
+                    </div>
+                    <div class="menu-link">
+                        <a href="/pages/portfolio.html">Portfolio <span>02</span></a>
+                    </div>
+                    <div class="menu-link">
+                        <a href="/pages/about.html">About me <span>03</span></a>
+                    </div>
+                    <div class="menu-link">
+                        <a href="#">Contact <span>04</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-right">
+                <div class="contact">
+                    <div class="mail">
+                        <div><span class="title">Contact</span><br /><br /></div>
+                        <div><span class="info">macgunmanmc@gmail.com</span><br /></div>
+                    </div>
+                    <div class="socials">
+                        <div class="dock">
+                            <div class="dock-item">
+                                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                            </div>
+                            <div class="dock-item">
+                                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                            </div>
+                            <div class="dock-item">
+                                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                            </div>
+                            <div class="dock-item">
+                                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Music Player -->
+    <div class="music-player-container">
+        <div class="toggle-player">
+            <ion-icon name="remove-outline"></ion-icon>
+        </div>
+
+        <div class="avatar">
+            <img src="/assets/avatar.png" alt="">
+        </div>
+
+        <div class="player">
+            <div class="sound-bars-lottie">
+                <div class="sound-bars"></div>
+            </div>
+
+            <div class="track-info">
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+            <div class="track-nav">
+                <div class="prev-track" onclick="prevTrack()">
+                    <ion-icon name="play-back-sharp"></ion-icon>
+                </div>
+                <div class="playpause-track" onclick="playPauseTrack()">
+                    <ion-icon name="play-sharp"></ion-icon>
+                </div>
+                <div class="next-track" onclick="prevTrack()">
+                    <ion-icon name="play-forward-sharp"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="hero-container">
+        <div class="img">
+            <img src="/assets/Tiguere.png" alt="Tigre">
+        </div>
+        <div class="txt">
+            <h1 class="h1">JC Developer</h1>
+            <hr>
+            <h2 class="h2">·Juan Cánepa·</h2>
+            <h3 class="h3">'93</h3>
+        </div>
+    </section>
+    <script src="/js/cursor.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/social.js"></script>
+    <script src="/js/musicPlayer.js"></script>
+    <script src="/js/efects.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
